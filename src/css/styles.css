@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Urbanist', sans-serif;
+    --white: #FFFFFF;
+    --black: #303030;
+    --gray: #f3f3f3;
+    --dark-gray: #AAAAAA;
+    --dark-blue: #161620;
+    --light-blue: #25273c;
+    --text-selected: #4b7cec;
+    --purple: #884ea0;
+}
+.main {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--gray);
+    display: grid;
+    grid-template: 70px repeat(4, auto) 1fr / 25% 1fr 2fr 1fr 25%;
+    grid-gap: 1em;
+    transition: background .3s;
+}
+header {
+    grid-area: 1 / 2 / 2 / 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+menu > li {
+    list-style: none;
+}
+ul {
+    grid-area: 3 / 2 / 4 / 5;
+    display: flex;
+    flex-direction: column;
+    transition: background .3s;
+}
+.container {
+    grid-area: 3 / 2 / 5 / 5;
+    background: var(--white);
+    border-radius: 5px;
+    transition: background .3s;
+}
+h2 {
+    text-align: center;
+}
+form {
+    padding: 1em;
+    background-color: var(--white);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    transition: background .3s;
+}
+input {
+    padding-left: 1em;
+    height: 30px;
+}
+input[type='text'] {
+    width: 100%;
+    transition: background .3s;
+}
+input[type='text']:focus-visible {
+    outline: none;
+}
+.form {
+    grid-area: 2 / 2 / 3 / 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+ul {
+    padding: 0;
+}
+ul li {
+    list-style: none;
+}
+.todo > a > i {
+    display: none;
+    color: var(--black);
+}
+input[type='checkbox'] {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 2px solid var(--gray);
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    transition: background .3s;
+}
+input[type='checkbox']:checked {
+    background: linear-gradient(45deg, var(--text-selected),  var(--purple) );
+}
+input[type='checkbox']:checked:after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f00c";
+    font-weight: 900;
+    position: absolute;
+    color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.todo {
+    padding: 1em;
+    border-bottom: 1px solid var(--gray);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--black);
+    transition: all .3s;
+}
+.todo p {
+    padding-left: 1em;
+}
+.main-filter a,
+.clear-filter {
+    text-decoration: none;
+    padding: 0 1em;
+    color: var(--black);
+}
+.count-filter {
+    grid-area: 4 / 2 / 5 / 3;
+}
+.main-filter {
+    grid-area: 4 / 3 / 5 / 4;
+    display: flex;
+    justify-content: center;
+}
+.clear-filter {
+    grid-area: 4 / 4 / 5 / 5;
+    text-align: right;
+}
+.count-filter,
+.main-filter,
+.clear-filter {
+    padding: 0  1em 1em 1em;
+}
+.line {
+    color: var(--dark-gray);
+    text-decoration: line-through;
+}
+.main-filter .selected,
+.dark .main-filter .selected {
+    font-weight: bold;
+    color: var(--text-selected);
+    transition: background .3s;
+}
+menu > li > a {
+    text-decoration: none;
+    color: var(--black);
+    transition: color .3s;
+}
+.main.dark {
+    background: var(--dark-blue);
+}
+.dark > .container,
+.dark > .form > form,
+.dark > .form > form > input[type='text'] {
+    background: var(--light-blue);
+    color: var(--white);
+}
+.dark > header > h1,
+.dark > header > menu > li > a,
+.dark > ul > div > li > p,
+.dark > ul > div > li > a > i,
+.dark > .count-filter,
+.dark > .clear-filter,
+.dark > .main-filter > a {
+    color: var(--white);
+}
+.dark > ul > div > li > p.line {
+    color: var(--dark-gray);
+}
+ul > div > li > p {
+    width: 100%;
+}
+.dark > ul > div > li > i {
+    display: none;
+}
+.dark > ul > div > li {
+    border-bottom: 1px solid var(--dark-blue);
+}
+@media screen and (max-width: 40em) {
+    .main {
+	grid-template: 70px repeat(4, auto) 1fr / 5% 1fr auto 1fr 5%;
+    }
+    .main-filter,
+    .count-filter,
+    .clear-filter {
+	font-size: .8em;
+    }
+    .main-filter {
+	grid-area: 5 / 2 / 6 / 5;
+	padding: 1em;
+	background-color: var(--white);
+	border-radius: 5px;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	transition: background .3s;
+    }
+    .dark > .main-filter {
+	background: var(--light-blue);
+	color: var(--white);
+    }
+    .todo > a {
+	text-decoration: none;
+    }
+    .todo > a > i {
+	display: block;
+    }
+}
