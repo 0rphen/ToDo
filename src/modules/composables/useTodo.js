@@ -19,7 +19,7 @@ const useTodo = () => {
   }
   const completedTodos = computed(() => todos.value.filter(todo => !todo.state))
   const clearTodos = () => todos.value = todos.value.filter(todo => !todo.state)
-  const deleteTodo = (id) => todos.value = todos.value.filter(todo => todo.id != id)
+  const deleteTodo = (index) => todos.value.splice(index, 1)
   return {
     getTodos,
     todo,
