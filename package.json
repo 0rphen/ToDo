@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "pre-commit": "^1.2.2",
     "vue": "^3.0.0",
     "vue-draggable-next": "^2.0.1",
     "vue-router": "^4.0.0-0",
