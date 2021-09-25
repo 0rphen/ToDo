@@ -6,11 +6,11 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "postinstall": "husky install"
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "pre-commit": "^1.2.2",
     "vue": "^3.0.0",
     "vue-draggable-next": "^2.0.1",
     "vue-router": "^4.0.0-0",
@@ -28,10 +28,8 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0",
+    "husky": "^7.0.2",
     "typescript": "~3.9.3",
     "vue-jest": "^5.0.0-0"
-  },
-  "pre-commit": [
-    "lint"
-  ]
+  }
 }
