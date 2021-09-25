@@ -10,8 +10,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn test:unit && yarn lint && eslint . --ext .js",
-      "pre-push": ""
+      "pre-commit": "yarn test:unit && yarn lint && eslint . --ext .js"
     }
   },
   "dependencies": {
