@@ -8,6 +8,11 @@
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test:unit && yarn lint && eslint . --ext .js"
+    }
+  },
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^3.0.0",
@@ -30,10 +35,5 @@
     "husky": "^7.0.2",
     "typescript": "~3.9.3",
     "vue-jest": "^5.0.0-0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn test:unit && yarn lint && eslint . --ext .js"
-    }
   }
 }
