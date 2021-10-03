@@ -22,7 +22,9 @@
    setup() {
      const todos = ref([])
      const filter = ref(fType.all)
-     const theme = ref(Theme.light)
+     const theme = (window.matchMedia('(prefers-color-scheme: dark)'))
+       ? ref(Theme.dark)
+       : ref(Theme.light)
      provide('todos', todos)
      provide('filter', filter)
      provide('theme', theme)
